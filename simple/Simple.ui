@@ -13,8 +13,14 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background: #FFECB3;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -22,6 +28,9 @@
      <number>0</number>
     </property>
     <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
      <number>0</number>
     </property>
     <item>
@@ -38,6 +47,9 @@
           <stylestrategy>PreferDefault</stylestrategy>
           <kerning>false</kerning>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 10, 3, 10;</string>
         </property>
         <property name="plainText">
          <string>This is the layout where the editing is done.
