@@ -29,20 +29,35 @@
       <property name="spacing">
        <number>0</number>
       </property>
-      <item row="1" column="0">
-       <widget class="QWebEngineView" name="displayNote">
-        <property name="url">
-         <url>
-          <string>about:blank</string>
-         </url>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="0">
        <widget class="QPlainTextEdit" name="editNote">
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>11</pointsize>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>false</kerning>
+         </font>
+        </property>
         <property name="plainText">
          <string>This is the layout where the editing is done.
 The PlainEditText and the WebEngineView is are placed in the GridView, so when the window loses focus, the PlainEditText will be hidden making the WebEngineView take over the entire view size. When the window is in focus, the WebEngineView is hidden and the PlainEditText is shown. </string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QWebEngineView" name="displayNote" native="true">
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+          <pointsize>11</pointsize>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="url" stdset="0">
+         <url>
+          <string>about:blank</string>
+         </url>
         </property>
        </widget>
       </item>
