@@ -6,51 +6,50 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>403</width>
-    <height>332</height>
+    <width>388</width>
+    <height>317</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="editNote">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>401</width>
-      <height>291</height>
-     </rect>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="leftMargin">
+     <number>0</number>
     </property>
-   </widget>
-   <widget class="QWebEngineView" name="displayNote">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>401</width>
-      <height>271</height>
-     </rect>
+    <property name="topMargin">
+     <number>0</number>
     </property>
-    <property name="url">
-     <url>
-      <string>about:blank</string>
-     </url>
+    <property name="rightMargin">
+     <number>0</number>
     </property>
-   </widget>
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="1" column="0">
+       <widget class="QWebEngineView" name="displayNote">
+        <property name="url">
+         <url>
+          <string>about:blank</string>
+         </url>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QPlainTextEdit" name="editNote">
+        <property name="plainText">
+         <string>This is the layout where the editing is done.
+The PlainEditText and the WebEngineView is are placed in the GridView, so when the window loses focus, the PlainEditText will be hidden making the WebEngineView take over the entire view size. When the window is in focus, the WebEngineView is hidden and the PlainEditText is shown. </string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>403</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <customwidgets>
   <customwidget>

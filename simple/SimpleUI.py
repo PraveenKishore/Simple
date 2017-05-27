@@ -11,6 +11,7 @@ class SimpleWindow(QtWidgets.QMainWindow, simpleUiForm):
         QtWidgets.QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.markdown = markdown2.Markdown()
+        self.editNote.setPlainText("")
         #self.noteView = QtWebEngineWidgets.QWebEngineView(self)
         self.installEventFilter(self)
 
