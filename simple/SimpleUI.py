@@ -16,6 +16,7 @@ class SimpleWindow(QtWidgets.QMainWindow, simpleUiForm):
         self.editNote.setPlainText("")
         #self.noteView = QtWebEngineWidgets.QWebEngineView(self)
         self.installEventFilter(self)
+        self.displayNote.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         #self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
 
     def eventFilter(self, object, event):
