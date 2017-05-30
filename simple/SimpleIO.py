@@ -8,8 +8,8 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtWidgets import *
 
 COLOR_PRIMARY = "#FFECB3"
-COLOR_PRIMARY_DARK = "#FFEaB3"
-COLOR_PRIMARY_DARKER = "#FFECB3"
+COLOR_PRIMARY_DARK = "#FFEC03"
+COLOR_PRIMARY_DARKER = "#FFE003"
 
 class SimpleIo(QWidget):
     def __init__(self):
@@ -79,28 +79,28 @@ class MyBar(QWidget):
         self.layout.setContentsMargins(0,0,0,0)
         self.layout.setSpacing(0)
 
-        btn_size = 35
+        self.buttonStyle = '''QPushButton { background-color: [COLOR_PRIMARY_DARK]; border: 0; }
+                           QPushButton:hover { background-color: [COLOR_PRIMARY_DARKER]; border: 0;  }
+            '''.replace("[COLOR_PRIMARY_DARK]", COLOR_PRIMARY_DARK).replace("[COLOR_PRIMARY_DARKER]", COLOR_PRIMARY_DARKER)
+
+        btn_size = 32
 
         self.titleBar = QLabel(self)
-        self.btn_close = QPushButton("x")
+        self.btn_close = QPushButton()
+        self.btn_close.setIcon(QIcon("resources/ic_delete.png"))
+        self.btn_close.setStyleSheet(self.buttonStyle)
         self.btn_close.clicked.connect(self.btn_close_clicked)
         self.btn_close.setFixedSize(btn_size,btn_size)
 
-        self.btn_min = QPushButton("+")
-        self.btn_min = QPushButton("+")
-        self.btn_min.clicked.connect(self.btn_min_clicked)
-        self.btn_min.setFixedSize(btn_size, btn_size)
-
-        self.btn_max = QPushButton("+")
-        self.btn_max.clicked.connect(self.btn_max_clicked)
+        self.btn_max = QPushButton()
+        self.btn_max.setIcon(QIcon("resources/add_black.png"))
+        self.btn_max.setStyleSheet(self.buttonStyle)
         self.btn_max.setFixedSize(btn_size, btn_size)
 
         self.setStyleSheet("background: {};".format(COLOR_PRIMARY_DARK))
 
-        self.layout.addWidget(self.btn_min)
-        self.layout.addWidget(self.titleBar)
-
         self.layout.addWidget(self.btn_max)
+        self.layout.addWidget(self.titleBar)
         self.layout.addWidget(self.btn_close)
 
         self.setLayout(self.layout)
